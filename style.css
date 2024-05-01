@@ -36,7 +36,7 @@ header {
     margin: 0 auto;
     border: 30px solid red;
     height: 700px;
-    width: 50%;
+    width: 600px;
     display: flex;
     flex-direction: column;
 }
@@ -46,8 +46,14 @@ header {
 *****************************************************************/
 
 .gridContainer {
-    border: 2px solid black;
     height: 600px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gridCell {
+    border: 1px solid black;
 }
 
 /*****************************************************************
