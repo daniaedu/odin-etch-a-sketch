@@ -7,21 +7,23 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
-    <header>Etch-a-Sketch</header>
     <div class="gameContainer">
-        <div class="gridContainer">
-
-        </div>
-
-        <div class="gameController">
-            <button class="gridSize">Grid Size</button>
-            <button class="standardMode">Standard</button>
-            <button class="rainbowMode">Rainbow</button>
-            <button class="eraser">Eraser</button>
-            <button class="clear">Reset</button>
+        <header>
+            <h1>Etch-a-Sketch</h1>
+        </header>
+        <div class="gridContainer"></div>
+        <div class="gameControlContainer">
+            <div class="buttonContainer">
+                <button class="standardMode">Standard</button>
+                <button class="rainbowMode">Rainbow</button>
+                <button class="eraser">Eraser</button>
+                <button class="clear">Reset</button>
+            </div>
+            <div class="slideContainer">
+                <input type="range" min="1" max="100" value="16" class="slider" id="myRange">
+            </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

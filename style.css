@@ -1,7 +1,6 @@
 /*****************************************************************
                     Reset and Base Styles
 *****************************************************************/
-
 *,
 *:before,
 *:after {
@@ -16,36 +15,36 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
-/*****************************************************************
-                            Header
-*****************************************************************/
-
-/* Header styles */
-header {
-    margin: 0 auto;
-    padding: 15px;
-}
 
 /*****************************************************************
                             Game Container
 *****************************************************************/
-
 .gameContainer {
     margin: 0 auto;
-    border: 30px solid red;
+    background: red;
+    border: 20px solid red;
     height: 700px;
-    width: 600px;
+    width: 700px;
     display: flex;
     flex-direction: column;
 }
 
 /*****************************************************************
+                            Header
+*****************************************************************/
+header {
+    margin: 0 auto;
+    background: red;
+}
+
+/*****************************************************************
                             Grid Container
 *****************************************************************/
-
 .gridContainer {
+    border: 1px solid black;
     height: 600px;
     width: 100%;
     display: flex;
@@ -53,18 +52,28 @@ header {
 }
 
 .gridCell {
-    border: 1px solid black;
+    border: 1px solid rgb(33, 32, 32);
+    background: white;
 }
 
 /*****************************************************************
-                        Game Controller Container
+                        Game Control Container
 *****************************************************************/
-
-.gameController {
-    background-color: yellow;
+.gameControlContainer {
+    background-color: red;
     flex: 1;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
+.buttonContainer,
+.slideContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.buttonContainer{
+    margin-top: 10px;
+    gap: 20px;
+}
