@@ -5,26 +5,42 @@ const standardButton = document.querySelector('.standardButton');
 const rainbowButton = document.querySelector('.rainbowButton');
 const eraserButton = document.querySelector('.eraserButton');
 const resetButton = document.querySelector('.resetButton');
+const slider = document.getElementById('myRange');
 
 // Event handlers 
 window.addEventListener('load', gridCreation);
 buttonContainer.addEventListener('click', addActiveClass);
 gridContainer.addEventListener('mouseover', gridCellAction);
-
+slider.addEventListener("click", gridCreation);  
 
 // Creates game grid
 function gridCreation(event) {
+    let number = ''
+
     if (event.type === 'load') {
-        const number = 16;
-        for (let row = 0; row < number; row++) {
-            for (let col = 0; col < number; col++) {
-                const flexBasis = 100 / number;
-                const gridCell = document.createElement('div')
-                gridCell.classList.add('gridCell');
-                gridCell.style.flex = `0 0 ${flexBasis}%`;
-                gridContainer.appendChild(gridCell);
-            }
+        number = slider.value;
+    }
+    else if (event.type === 'click') {
+        number = event.target.value;
+        gridDeletion();
+    }
+
+    for (let row = 0; row < number; row++) {
+        for (let col = 0; col < number; col++) {
+            const flexBasis = 100 / number;
+            const gridCell = document.createElement('div')
+            gridCell.classList.add('gridCell');
+            gridCell.style.flex = `0 0 ${flexBasis}%`;
+            gridContainer.appendChild(gridCell);
         }
+    }
+}
+
+// Deletes grid cells
+function gridDeletion () {
+    const childNodes = gridContainer.childNodes;
+    for (let index = childNodes.length - 1; index >= 0; index--) {
+        gridContainer.removeChild(childNodes[index]);
     }
 }
 
