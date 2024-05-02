@@ -9,6 +9,8 @@ const resetButton = document.querySelector('.resetButton');
 // Event handlers 
 window.addEventListener('load', gridCreation);
 buttonContainer.addEventListener('click', addActiveClass);
+gridContainer.addEventListener('mouseover', gridCellAction);
+
 
 // Creates game grid
 function gridCreation(event) {
@@ -52,6 +54,26 @@ function addActiveClass(event) {
         standardButton.classList.toggle('active', false);
         rainbowButton.classList.toggle('active', false);
         eraserButton.classList.toggle('active', false);
+        document.location.reload();
+    }
+    else {
+        return;
+    }
+}
+
+// Fills grid cells based on button mode
+function gridCellAction(event) {
+    if (event.target.classList.contains('gridCell') && 
+        standardButton.classList.contains('active')) {
+        event.target.style.background = 'black';
+    }
+    else if(event.target.classList.contains('gridCell') && 
+        rainbowButton.classList.contains('active')) {
+        event.target.style.background = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
+    }
+    else if (event.target.classList.contains('gridCell') && 
+    eraserButton.classList.contains('active')) {
+        event.target.style.background = 'white';
     }
     else {
         return;
