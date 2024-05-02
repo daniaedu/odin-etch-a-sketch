@@ -10,7 +10,7 @@ const slider = document.getElementById('myRange');
 // Event handlers 
 window.addEventListener('load', gridCreation);
 buttonContainer.addEventListener('click', addActiveClass);
-gridContainer.addEventListener('mouseover', gridCellAction);
+gridContainer.addEventListener('click', gridCellAction);
 slider.addEventListener("click", gridCreation);  
 
 // Creates game grid
